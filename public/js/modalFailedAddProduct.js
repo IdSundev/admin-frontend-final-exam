@@ -1,0 +1,1 @@
+$('#modal-sm-failed').modal('show')

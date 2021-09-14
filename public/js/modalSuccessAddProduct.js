@@ -1,0 +1,1 @@
+$('#modal-sm-success').modal('show');
