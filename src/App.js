@@ -25,11 +25,14 @@ function App() {
             <i className="fas fa-chevron-up" />
           </a>
           <Switch>
-            <Route path="/admin/products/:productId/edit">
+            <Route path="/admin/products/:id/edit">
               <EditProduct />
             </Route>
             <Route path="/admin/products/Add">
               <AddProduct />
+            </Route>
+            <Route path="/admin/products/:id">
+              <Products />
             </Route>
             <Route path="/admin/products">
               <Products />

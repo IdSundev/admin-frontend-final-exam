@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 
 export default class ModalConfirmation extends Component {
-  constructor(props){
-    super(props)
-  }
   
   deleteProduct = () => {
     this.props.deleteProduct(this.props.id_product);
