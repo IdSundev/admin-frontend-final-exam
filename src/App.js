@@ -7,6 +7,7 @@ import SidebarMenu from "./components/themplate/SidebarMenu";
 import AddProduct from "./pages/products/AddProduct";
 import EditProduct from "./pages/products/EditProduct";
 import Preload from "./pages/Preload";
+import Stocks from "./pages/Stocks";
 
 function App() {
   return (
@@ -25,6 +26,12 @@ function App() {
             <i className="fas fa-chevron-up" />
           </a>
           <Switch>
+            <Route path="/admin/stocks/:id">
+              <Stocks />
+            </Route>
+            <Route path="/admin/stocks">
+              <Stocks />
+            </Route>
             <Route path="/admin/products/:id/edit">
               <EditProduct />
             </Route>

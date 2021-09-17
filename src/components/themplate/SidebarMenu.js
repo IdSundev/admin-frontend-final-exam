@@ -100,7 +100,7 @@ export default class SidebarMenu extends Component {
                   </ul>
                 </li>
                 <li className="nav-item" onClick={this.getPage}>
-                  <a href="/#" className={this.state.page === "products" || this.state.page === "stock" ? "nav-link active" : "nav-link"}>
+                  <a href="/#" className={this.state.page === "products" || this.state.page === "stocks" ? "nav-link active" : "nav-link"}>
                     <i className="nav-icon fas fa-cubes" />
                     <p>
                       Products
@@ -115,7 +115,7 @@ export default class SidebarMenu extends Component {
                       </Link>
                     </li>
                     <li className="nav-item">
-                      <Link to="/admin/stock" onClick={this.getPage} className={this.state.page === "stock" ? "nav-link active" : "nav-link"}>
+                      <Link to="/admin/stocks" onClick={this.getPage} className={this.state.page === "stocks" ? "nav-link active" : "nav-link"}>
                         <i className="far fa-circle nav-icon" />
                         <p>Stock Operasional</p>
                       </Link>
