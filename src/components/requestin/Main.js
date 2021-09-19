@@ -6,13 +6,13 @@ import { Link } from "react-router-dom";
 
 export default class Main extends Component {
   componentDidMount() {
-    this.getRequests();
+    this.getRequestsin();
     this.getWarehouse();
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.page && this.props.page !== prevProps.page) {
-      this.getRequests();
+      this.getRequestsin();
       this.getWarehouse();
     }
   }
@@ -20,21 +20,21 @@ export default class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      requests: [],
+      requestsin: [],
       warehouse: [],
       id_warehouse: 1,
     };
-    this.getRequests = this.getRequests.bind(this);
+    this.getRequestsin = this.getRequestsin.bind(this);
     this.getWarehouse = this.getWarehouse.bind(this);
   }
 
-  getRequests = () => {
+  getRequestsin = () => {
     axios
       .get(
-        `${url_backend}/requests?page=${this.props.page}&id_warehouse=${this.state.id_warehouse}`
+        `${url_backend}/requestsin?page=${this.props.page}&id_warehouse=${this.state.id_warehouse}`
       )
       .then((res) => {
-        this.setState({ requests: res.data.request });
+        this.setState({ requestsin: res.data.requestin });
         this.setState({ links: res.data.links });
       })
       .catch((err) => {
@@ -44,7 +44,7 @@ export default class Main extends Component {
 
   getWarehouse = () => {
     axios
-      .get(`${url_backend}/requests/warehouse`)
+      .get(`${url_backend}/requestsin/warehouse`)
       .then((res) => {
         // console.log(res);
         let data_warehouse = []
@@ -93,7 +93,7 @@ export default class Main extends Component {
                         </tr>
                       </thead>
                       <tbody>
-                        {this.state.requests.map((request, idx) => {
+                        {this.state.requestsin.map((request, idx) => {
                           return (
                             <tr
                               key={idx}
@@ -103,8 +103,20 @@ export default class Main extends Component {
                                   : ""
                               }
                             >
-                              <td>{this.state.warehouse[request.id_original_warehouse]}</td>
-                              <td>{this.state.warehouse[request.id_destination_warehouse]}</td>
+                              <td>
+                                {
+                                  this.state.warehouse[
+                                    request.id_original_warehouse
+                                  ]
+                                }
+                              </td>
+                              <td>
+                                {
+                                  this.state.warehouse[
+                                    request.id_destination_warehouse
+                                  ]
+                                }
+                              </td>
                               <td>{request.request_date}</td>
                               <td>
                                 <button
@@ -124,7 +136,9 @@ export default class Main extends Component {
                                 </button>
                               </td>
                               <td>
-                                <Link to={`/admin/requests/detail/${request.id_request}`}>
+                                <Link
+                                  to={`/admin/requestsin/detail/${request.id_request}`}
+                                >
                                   <button className="btn btn-primary btn-sm">
                                     Detail
                                   </button>

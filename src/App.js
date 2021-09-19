@@ -13,6 +13,13 @@ import Stockin from "./pages/stockin/Stockin";
 import Stockout from "./pages/stockout/Stockout";
 import Admin from "./pages/admin/Admin";
 import Warehouse from "./pages/warehouse/Warehouse";
+import AddAdmin from "./pages/admin/AddAdmin";
+import AddWarehouse from "./pages/warehouse/AddWarehouse";
+import DetailRequest from "./pages/request/DetailRequest";
+import DetailRequestin from "./pages/requestin/DetailRequestin";
+import Requestin from "./pages/requestin/Requestin";
+import DetailStockin from "./pages/stockin/DetailStockin";
+import DetailStockout from "./pages/stockout/DetailStockout";
 
 function App() {
   return (
@@ -31,8 +38,14 @@ function App() {
             <i className="fas fa-chevron-up" />
           </a>
           <Switch>
+            <Route path="/admin/warehouse/add">
+              <AddWarehouse />
+            </Route>
             <Route path="/admin/warehouse">
               <Warehouse />
+            </Route>
+            <Route path="/admin/admin/add">
+              <AddAdmin />
             </Route>
             <Route path="/admin/admin/:id">
               <Admin />
@@ -40,17 +53,39 @@ function App() {
             <Route path="/admin/admin">
               <Admin />
             </Route>
+
+            <Route path="/admin/stockout/detail/:id">
+              <DetailStockout />
+            </Route>
             <Route path="/admin/stockout/:id">
               <Stockout />
             </Route>
             <Route path="/admin/stockout">
               <Stockout />
             </Route>
+
+            <Route path="/admin/stockin/detail/:id">
+              <DetailStockin />
+            </Route>
             <Route path="/admin/stockin/:id">
               <Stockin />
             </Route>
             <Route path="/admin/stockin">
               <Stockin />
+            </Route>
+
+            <Route path="/admin/requestsin/detail/:id">
+              <DetailRequestin />
+            </Route>
+            <Route path="/admin/requestsin/:id">
+              <Requestin />
+            </Route>
+            <Route path="/admin/requestsin">
+              <Requestin />
+            </Route>
+
+            <Route path="/admin/requests/detail/:id">
+              <DetailRequest />
             </Route>
             <Route path="/admin/requests/:id">
               <Request />

@@ -111,7 +111,7 @@ export default class Main extends Component {
                               </td>
                               <td>{request.date_of_entry}</td>
                               <td>
-                                <Link to="">
+                                <Link to={`/admin/stockin/detail/${request.id_stock_in}`}>
                                   <button className="btn btn-primary btn-sm">
                                     Detail
                                   </button>

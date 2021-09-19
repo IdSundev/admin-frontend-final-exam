@@ -66,7 +66,7 @@ export default class Main extends Component {
                           <th scope="col">Email</th>
                           <th scope="col">Contact</th>
                           <th scope="col">Warehouse</th>
-                          <th scope="col">Detail</th>
+                          <th scope="col">Gender</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -77,13 +77,7 @@ export default class Main extends Component {
                               <td>{request.email}</td>
                               <td>{request.contact}</td>
                               <td>{request.detail_address}</td>
-                              <td>
-                                <Link to="">
-                                  <button className="btn btn-primary btn-sm">
-                                    Detail
-                                  </button>
-                                </Link>
-                              </td>
+                              <td>{request.gender}</td>
                             </tr>
                           );
                         })}

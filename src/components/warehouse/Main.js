@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { url_backend } from "../../config/url";
-import { Link } from "react-router-dom";
 
 export default class Main extends Component {
   componentDidMount() {
@@ -58,9 +57,9 @@ export default class Main extends Component {
                       <thead>
                         <tr>
                           <th scope="col">Image</th>
-                          <th scope="col">Address</th>
-                          <th scope="col">Detail</th>
-                          <th scope="col">Action</th>
+                          <th scope="col">Warehouse</th>
+                          <th scope="col">Detail Address</th>
+                          <th scope="col">Other Detail</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -75,14 +74,12 @@ export default class Main extends Component {
                                 />
                               </td>
                               <td>{request.detail_address}</td>
-                              <td>{request.other_detail}</td>
                               <td>
-                                <Link to="">
-                                  <button className="btn btn-primary btn-sm">
-                                    Detail
-                                  </button>
-                                </Link>
+                                {request.village}, {request.sub_district}, <br />
+                                {request.city}, {request.province} <br />
+                                {request.postal_code}
                               </td>
+                              <td>{request.other_detail}</td>
                             </tr>
                           );
                         })}

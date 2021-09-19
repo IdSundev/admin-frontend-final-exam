@@ -1,0 +1,1 @@
+$('#modal-sm-reject').modal('show');
