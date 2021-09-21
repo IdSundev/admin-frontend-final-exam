@@ -68,7 +68,7 @@ export default class Main extends Component {
               <div className="col-md-12">
                 <div className="card card-primary">
                   <div className="card-header">
-                    <h3 className="card-title">LIST DATA</h3>
+                    <h3 className="card-title">LIST DATA STOCK GOING IN</h3>
                     <div className="card-tools">
                       <button
                         type="button"

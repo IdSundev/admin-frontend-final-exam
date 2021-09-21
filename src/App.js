@@ -20,6 +20,8 @@ import DetailRequestin from "./pages/requestin/DetailRequestin";
 import Requestin from "./pages/requestin/Requestin";
 import DetailStockin from "./pages/stockin/DetailStockin";
 import DetailStockout from "./pages/stockout/DetailStockout";
+import AddStockin from "./pages/stockin/AddStockin";
+import AddStockout from "./pages/stockout/AddStockout";
 
 function App() {
   return (
@@ -54,6 +56,9 @@ function App() {
               <Admin />
             </Route>
 
+            <Route path="/admin/stockout/add">
+              <AddStockout />
+            </Route>
             <Route path="/admin/stockout/detail/:id">
               <DetailStockout />
             </Route>
@@ -64,6 +69,9 @@ function App() {
               <Stockout />
             </Route>
 
+            <Route path="/admin/stockin/add">
+              <AddStockin />
+            </Route>
             <Route path="/admin/stockin/detail/:id">
               <DetailStockin />
             </Route>
