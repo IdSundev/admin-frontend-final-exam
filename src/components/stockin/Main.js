@@ -67,19 +67,6 @@ export default class Main extends Component {
             <div className="row">
               <div className="col-md-12">
                 <div className="card card-primary">
-                  <div className="card-header">
-                    <h3 className="card-title">LIST DATA STOCK GOING IN</h3>
-                    <div className="card-tools">
-                      <button
-                        type="button"
-                        className="btn btn-tool"
-                        data-card-widget="collapse"
-                      >
-                        <i className="fas fa-minus" />
-                      </button>
-                    </div>
-                    {/* /.card-tools */}
-                  </div>
                   {/* /.card-header */}
                   <div className="card-body" style={{ display: "block" }}>
                     <table className="table table-striped">

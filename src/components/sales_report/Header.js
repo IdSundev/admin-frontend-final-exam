@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react'
 
 export default class Header extends Component {
   render() {
@@ -10,20 +9,15 @@ export default class Header extends Component {
           <div className="container-fluid">
             <div className="row mb-2">
               <div className="col-sm-6">
-                <Link to={`/admin/requests/add`}>
-                  <button className="btn btn-success mb-2 btn-sm">
-                    <i className="fa fa-plus"></i>
-                    &nbsp; Create Request
-                  </button>
-                </Link>
+                <h5>Sales Report</h5>
               </div>
               {/* /.col */}
               <div className="col-sm-6">
                 <ol className="breadcrumb float-sm-right">
                   <li className="breadcrumb-item">
-                    <a href="/requests">Warehouse</a>
+                    <a href="/sales-report">Sales Report</a>
                   </li>
-                  <li className="breadcrumb-item active">Request</li>
+                  <li className="breadcrumb-item active">Transaction User</li>
                 </ol>
               </div>
               {/* /.col */}
@@ -34,6 +28,6 @@ export default class Header extends Component {
         </div>
         {/* /.content-header */}
       </div>
-    );
+    )
   }
 }

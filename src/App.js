@@ -22,6 +22,8 @@ import DetailStockin from "./pages/stockin/DetailStockin";
 import DetailStockout from "./pages/stockout/DetailStockout";
 import AddStockin from "./pages/stockin/AddStockin";
 import AddStockout from "./pages/stockout/AddStockout";
+import AddRequest from "./pages/request/AddRequest";
+import Sales from "./pages/sales_report/Sales";
 
 function App() {
   return (
@@ -92,8 +94,18 @@ function App() {
               <Requestin />
             </Route>
 
+            <Route path="/admin/sales-report/:id">
+              <Sales />
+            </Route>
+            <Route path="/admin/sales-report">
+              <Sales />
+            </Route>
+
             <Route path="/admin/requests/detail/:id">
               <DetailRequest />
+            </Route>
+            <Route path="/admin/requests/add">
+              <AddRequest />
             </Route>
             <Route path="/admin/requests/:id">
               <Request />
