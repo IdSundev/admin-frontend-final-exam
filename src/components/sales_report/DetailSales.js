@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { url_backend } from "../../config/url";
+const currency = require("../../helpers/formatRupiah");
 
 export default class DetailSales extends Component {
   componentDidMount() {
@@ -45,9 +46,9 @@ export default class DetailSales extends Component {
               return (
                 <tr key={idx}>
                   <td>{sales.name}</td>
-                  <td>{sales.price}</td>
+                  <td>Rp. {currency.FormatRupiah(sales.price)}</td>
                   <td>{sales.quantity}</td>
-                  <td>{sales.total}</td>
+                  <td>Rp. {currency.FormatRupiah(sales.total)}</td>
                 </tr>
               );
             })}

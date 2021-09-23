@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { url_backend } from "../../config/url";
 import Pagination from "./Pagination";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 export default class Main extends Component {
   componentDidMount() {

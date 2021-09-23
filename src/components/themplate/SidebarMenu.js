@@ -151,7 +151,7 @@ export default class SidebarMenu extends Component {
                   </ul>
                 </li>
                 <li className="nav-item" onClick={this.getPage}>
-                  <a href="/#" className={this.state.page === "warehouse" || this.state.page === "requests" || this.state.page === "requestsin" || this.state.page === "stockin" || this.state.page === "stockout" || this.state.page === "sales-report" ? "nav-link active" : "nav-link"}>
+                  <a href="/#" className={this.state.page === "warehouse" || this.state.page === "requests" || this.state.page === "requestsin" || this.state.page === "stockin" || this.state.page === "stockout" || this.state.page === "sales-report" || this.state.page === "revenue" ? "nav-link active" : "nav-link"}>
                     <i className="nav-icon fas fa-warehouse" />
                     <p>
                       Warehouse
@@ -199,6 +199,12 @@ export default class SidebarMenu extends Component {
                       <Link to="/admin/sales-report" onClick={this.getPage} className={this.state.page === "sales-report" ? "nav-link active" : "nav-link"}>
                         <i className="far fa-circle nav-icon" />
                         <p>Sales Report</p>
+                      </Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link to="/admin/revenue" onClick={this.getPage} className={this.state.page === "revenue" ? "nav-link active" : "nav-link"}>
+                        <i className="far fa-circle nav-icon" />
+                        <p>Revenue</p>
                       </Link>
                     </li>
                   </ul>

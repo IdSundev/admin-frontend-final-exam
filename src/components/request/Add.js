@@ -120,7 +120,7 @@ export default class Add extends Component {
     let closestwarehouse = 0;
     let id_warehouse;
     // 0.690
-    this.state.warehouse.map((warehouse) => {
+    this.state.warehouse.forEach((warehouse) => {
       let from = turf.point([this.state.lon, this.state.lat]);
       let to = turf.point([warehouse.lon, warehouse.lat]);
       let distance = turf.distance(from, to, options);
@@ -147,7 +147,7 @@ export default class Add extends Component {
         id_destination_warehouse: id_destination_warehouse,
       })
       .then((res) => {
-        this.state.products_selected.map((product) => {
+        this.state.products_selected.forEach((product) => {
           axios
             .post(`${url_backend}/request_detail`, {
               id_request: res.data.id_request,

@@ -24,6 +24,7 @@ import AddStockin from "./pages/stockin/AddStockin";
 import AddStockout from "./pages/stockout/AddStockout";
 import AddRequest from "./pages/request/AddRequest";
 import Sales from "./pages/sales_report/Sales";
+import Revenue from "./pages/Revenue";
 
 function App() {
   return (
@@ -92,6 +93,10 @@ function App() {
             </Route>
             <Route path="/admin/requestsin">
               <Requestin />
+            </Route>
+
+            <Route path="/admin/revenue">
+              <Revenue />
             </Route>
 
             <Route path="/admin/sales-report/:id">

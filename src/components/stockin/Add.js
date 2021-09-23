@@ -152,7 +152,7 @@ export default class Add extends Component {
         description: this.state.description,
       })
       .then((res) => {
-        this.state.products_selected.map((product) => {
+        this.state.products_selected.forEach((product) => {
           axios
             .post(`${url_backend}/stockin_detail`, {
               id_stock_in: res.data.id_stock_in,

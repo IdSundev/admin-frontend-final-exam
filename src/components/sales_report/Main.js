@@ -3,6 +3,8 @@ import axios from "axios";
 import { url_backend } from "../../config/url";
 import Pagination from "./Pagination";
 import DetailSales from "./DetailSales";
+import Graph from "./Graph";
+const currency = require("../../helpers/formatRupiah");
 
 export default class Main extends Component {
   componentDidMount() {
@@ -46,51 +48,59 @@ export default class Main extends Component {
           <div className="container-fluid">
             <div className="row">
               <div className="col-md-12">
+                <Graph id_warehouse={this.state.id_warehouse} />
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-md-12">
                 {this.state.sales.map((sales, idx) => {
                   return (
                     <div className="card" key={idx}>
                       {/* /.card-header */}
                       <div className="card-body" style={{ display: "block" }}>
                         <table>
-                          <tr>
-                            <td>
-                              <b>ID Transaction</b>
-                            </td>
-                            <td>:&nbsp;{sales.id_transaction}</td>
-                            <td>&nbsp;&nbsp;&nbsp;</td>
-                            <td>
-                              <b>User Address</b>
-                            </td>
-                            <td>:&nbsp;{sales.user_address}</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <b>Date</b>
-                            </td>
-                            <td>:&nbsp;{sales.date}</td>
-                            <td>&nbsp;&nbsp;&nbsp;</td>
-                            <td>
-                              <b>Warehouse</b>
-                            </td>
-                            <td>:&nbsp;{sales.warehouse}</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <b>User Fullname</b>
-                            </td>
-                            <td>:&nbsp;{sales.full_name}</td>
-                            <td>&nbsp;&nbsp;&nbsp;</td>
-                            <td>
-                              <b>Total</b>
-                            </td>
-                            <td>:&nbsp;{sales.total}</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <b>Brought Item</b>
-                            </td>
-                            <td>:</td>
-                          </tr>
+                          <thead></thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <b>ID Transaction</b>
+                              </td>
+                              <td>:&nbsp;{sales.id_transaction}</td>
+                              <td>&nbsp;&nbsp;&nbsp;</td>
+                              <td>
+                                <b>User Address</b>
+                              </td>
+                              <td>:&nbsp;{sales.user_address}</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <b>Date</b>
+                              </td>
+                              <td>:&nbsp;{sales.date}</td>
+                              <td>&nbsp;&nbsp;&nbsp;</td>
+                              <td>
+                                <b>Warehouse</b>
+                              </td>
+                              <td>:&nbsp;{sales.warehouse}</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <b>User Fullname</b>
+                              </td>
+                              <td>:&nbsp;{sales.full_name}</td>
+                              <td>&nbsp;&nbsp;&nbsp;</td>
+                              <td>
+                                <b>Total</b>
+                              </td>
+                              <td>:&nbsp;Rp. {currency.FormatRupiah(sales.total)}</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <b>Brought Item</b>
+                              </td>
+                              <td>:</td>
+                            </tr>
+                          </tbody>
                         </table>
                         <DetailSales id_transaction={sales.id_transaction} />
                       </div>
