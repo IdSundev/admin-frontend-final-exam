@@ -28,6 +28,7 @@ import Revenue from "./pages/Revenue";
 import UserTransaction from "./pages/user_transaction/UserTransaction";
 import DetailUserTransaction from "./pages/user_transaction/DetailUserTransaction";
 import NewUserTransaction from './pages/new_user_transaction/NewUserTransaction'
+import Login from "./components/admin/Login";
 
 
 
@@ -62,6 +63,9 @@ function App() {
             </Route>
             <Route path="/admin/admin">
               <Admin />
+            </Route>
+            <Route path="/admin/login">
+              <Login />
             </Route>
 
             <Route path="/admin/stockout/add">
