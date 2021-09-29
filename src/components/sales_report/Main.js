@@ -4,6 +4,8 @@ import { url_backend } from "../../config/url";
 import Pagination from "./Pagination";
 import DetailSales from "./DetailSales";
 import Graph from "./Graph";
+import Cookies from 'universal-cookie'
+const cookies = new Cookies()
 const currency = require("../../helpers/formatRupiah");
 
 export default class Main extends Component {
@@ -21,7 +23,7 @@ export default class Main extends Component {
     super(props);
     this.state = {
       sales: [],
-      id_warehouse: 1,
+      id_warehouse: cookies.get('id_warehouse'),
     };
     this.getSales = this.getSales.bind(this);
   }

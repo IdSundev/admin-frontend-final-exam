@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import { url_backend } from "../../config/url";
 import Pagination from "./Pagination";
+import Cookies from 'universal-cookie'
+const cookies = new Cookies()
 
 export default class Main extends Component {
   componentDidMount() {
@@ -18,7 +20,7 @@ export default class Main extends Component {
     super(props);
     this.state = {
       stocks: [],
-      id_warehouse: 1,
+      id_warehouse: cookies.get('id_warehouse'),
     };
     this.getStocks = this.getStocks.bind(this);
   }

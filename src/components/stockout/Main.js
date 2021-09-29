@@ -3,6 +3,8 @@ import axios from "axios";
 import { url_backend } from "../../config/url";
 import Pagination from "./Pagination";
 import { Link } from "react-router-dom";
+import Cookies from 'universal-cookie'
+const cookies = new Cookies()
 
 export default class Main extends Component {
   componentDidMount() {
@@ -25,7 +27,7 @@ export default class Main extends Component {
       stockout: [],
       warehouse: [],
       users: [],
-      id_warehouse: 1,
+      id_warehouse: cookies.get('id_warehouse'),
     };
     this.getStockout = this.getStockout.bind(this);
     this.getWarehouse = this.getWarehouse.bind(this);

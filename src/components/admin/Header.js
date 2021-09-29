@@ -25,7 +25,6 @@ export default class Header extends Component {
         id_warehouse: id_warehouse
       })
     }
-
     console.log('id', this.state.id_warehouse)
   }
 
@@ -50,7 +49,7 @@ export default class Header extends Component {
               <div className="col-sm-6">
                 <ol className="breadcrumb float-sm-right">
                   <li className="breadcrumb-item">
-                    <a href="/admin">Users {this.state.id_warehouse}</a>
+                    <a href="/admin">Users</a>
                   </li>
                   <li className="breadcrumb-item active">Admin</li>
                 </ol>

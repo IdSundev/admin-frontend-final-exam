@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { url_backend } from "../../config/url";
+import Cookies from 'universal-cookie'
+const cookies = new Cookies()
 const currency = require("../../helpers/formatRupiah");
 
 export default class Main extends Component {
@@ -12,7 +14,7 @@ export default class Main extends Component {
     super(props);
     this.state = {
       revenue: 0,
-      id_warehouse: 1,
+      id_warehouse: cookies.get('id_warehouse'),
       year: [],
       // fm => filter month
       fm_year: new Date().getFullYear(),
@@ -69,7 +71,7 @@ export default class Main extends Component {
     this.setState({ fm_month: event.target.value });
   };
 
-  handleFilterMonth = () =>{
+  handleFilterMonth = () => {
     axios
       .get(
         `${url_backend}/revenue/month?warehouse=${this.state.id_warehouse}&year=${this.state.fm_year}&month=${this.state.fm_month}`
@@ -80,7 +82,7 @@ export default class Main extends Component {
       .catch((err) => {
         console.log(err);
       });
-  }
+  };
 
   render() {
     return (
@@ -175,7 +177,7 @@ export default class Main extends Component {
                             type="button"
                             className="btn btn-success"
                             onClick={() => {
-                              this.handleFilterMonth()
+                              this.handleFilterMonth();
                             }}
                           >
                             Apply Filter
