@@ -56,7 +56,7 @@ export default class Pagination extends Component {
                   );
                 }
               })}
-              <Link to={`/admin/sales-report/${this.props.links.next}`}>
+              <Link to={`/admin/sales-report/${this.props.links.next ? this.props.links.next : this.props.links.last_page}`}>
                 <button className="btn btn-outline-primary ml-2">&gt;</button>
               </Link>
               <Link to={`/admin/sales-report/${this.props.links.last_page}`}>
