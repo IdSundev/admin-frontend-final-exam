@@ -25,6 +25,11 @@ import AddStockout from "./pages/stockout/AddStockout";
 import AddRequest from "./pages/request/AddRequest";
 import Sales from "./pages/sales_report/Sales";
 import Revenue from "./pages/Revenue";
+import UserTransaction from "./pages/user_transaction/UserTransaction";
+import DetailUserTransaction from "./pages/user_transaction/DetailUserTransaction";
+import NewUserTransaction from './pages/new_user_transaction/NewUserTransaction'
+
+
 
 function App() {
   return (
@@ -93,6 +98,22 @@ function App() {
             </Route>
             <Route path="/admin/requestsin">
               <Requestin />
+            </Route>
+
+            <Route path="/admin/transaction/detail/:id">
+              <DetailUserTransaction />
+            </Route>
+            <Route path="/admin/transactions/:id">
+              <UserTransaction />
+            </Route>
+            <Route path="/admin/transactions">
+              <UserTransaction />
+            </Route>
+            <Route path="/admin/new-transaction/:id">
+              <NewUserTransaction />
+            </Route>
+            <Route path="/admin/new-transaction">
+              <NewUserTransaction />
             </Route>
 
             <Route path="/admin/revenue">
